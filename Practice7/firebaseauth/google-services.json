@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "774497696380",
+    "project_id": "practice7-4cb69",
+    "storage_bucket": "practice7-4cb69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774497696380:android:c60d22b85e108f4ceca7f9",
+        "android_client_info": {
+          "package_name": "ru.mirea.lazarev.firebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774497696380-jp4n1r8ft01cqaplvuofhaq6qau5l5rq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXimqGXqpz3Jr_0A0jRYorYIPjgKBiJOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774497696380-jp4n1r8ft01cqaplvuofhaq6qau5l5rq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

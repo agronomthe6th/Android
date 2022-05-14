@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/calculateFragment">
+
+    <fragment
+        android:id="@+id/calculateFragment"
+        android:name="ru.mirea.lazarev.mireaproject.CalculateFragment"
+        android:label="fragment_calculate"
+        tools:layout="@layout/fragment_calculate" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="ru.mirea.lazarev.mireaproject.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
+    <fragment
+        android:id="@+id/StoriesFragment"
+        android:name="ru.mirea.lazarev.mireaproject.StoriesFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_stories" />
+    <fragment
+        android:id="@+id/AudioRecordFragment"
+        android:name="ru.mirea.lazarev.mireaproject.AudioRecordFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_audio_record" />
+    <fragment
+        android:id="@+id/MakeStory"
+        android:name="ru.mirea.lazarev.mireaproject.MakeStory"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_make_story" />
+    <fragment
+        android:id="@+id/MusicPlayer"
+        android:name="ru.mirea.lazarev.mireaproject.MusicPlayer"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_music_player" />
+    <fragment
+        android:id="@+id/SensorsFragment"
+        android:name="ru.mirea.lazarev.mireaproject.SensorsFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_sensors" />
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="ru.mirea.lazarev.mireaproject.SettingsFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/CameraFragment"
+        android:name="ru.mirea.lazarev.mireaproject.ui.CameraFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_camera" />
+</navigation>
