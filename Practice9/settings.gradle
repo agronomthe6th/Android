@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        maven {url 'https://mvnrepository.com'}
+    }
+}
+rootProject.name = "Practic8"
+include ':app'
+include ':yandexmaps'
+include ':yandexdriver'
