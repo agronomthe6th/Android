@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "ru.mirea.lazarev.socketconnections"
+        applicationId "ru.mirea.lazarev.httpurlconnections"
         minSdk 21
         targetSdk 32
         versionCode 1

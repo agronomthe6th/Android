@@ -3,10 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
-        <entry key="firebaseauth/src/main/res/layout/activity_main.xml" value="0.67" />
-        <entry key="httpurlconnection/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
-        <entry key="socketconnection/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15729166666666666" />
+        <entry key="firebaseauth/src/main/res/layout/activity_main.xml" value="0.16041666666666668" />
+        <entry key="httpurlconnections/src/main/res/layout/activity_main.xml" value="0.31197916666666664" />
         <entry key="socketconnections/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
       </map>
     </option>

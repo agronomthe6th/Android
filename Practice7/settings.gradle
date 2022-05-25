@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Practice7"
-include ':socketconnection'
-include ':httpurlconnection'
+include ':app'
 include ':socketconnections'
+include ':httpurlconnections'
 include ':firebaseauth'
