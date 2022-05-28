@@ -1,47 +1,51 @@
-package ru.mirea.lazarev.mireaproject;
+package ru.mirea.gribkova.mireaproject1;
 
-import android.content.pm.PackageManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Menu;
-
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.ScrollingView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-
-import ru.mirea.lazarev.mireaproject.databinding.ActivityMainBinding;
-import ru.mirea.lazarev.mireaproject.ui.CameraFragment;
+import ru.mirea.gribkova.mireaproject1.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
+private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        setSupportActionBar(binding.appBarMain.toolbar);
+     binding = ActivityMainBinding.inflate(getLayoutInflater());
+     setContentView(binding.getRoot());
 
+        setSupportActionBar(binding.appBarMain.toolbar);
+        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        NavigationView navigationView = binding.navView;
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.calculateFragment,R.id.CameraFragment,R.id.AudioRecordFragment,
-                R.id.fragment_sensors,R.id.webViewFragment,R.id.AudioRecordFragment,
-                R.id.MusicPlayer,R.id.SettingsFragment,R.id.StoriesFragment)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.calculator, R.id.music,R.id.createphoto,R.id.sensors,R.id.audio, R.id.settings, R.id.history, R.id.Socket, R.id.Room, R.id.Maps)
                 .setOpenableLayout(drawer)
                 .build();
+
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -55,28 +59,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreatePanelMenu(int featureId, @NonNull Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu );
+        return true;
+    }
+
+    public void onClickToAuth(View view) {
+        Intent intent = new Intent(this, AuthWithFirebase.class);
+        startActivity(intent);
+    }
+
+    @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == CameraFragment.REQUEST_CODE_PERMISSION_CAMERA) {
-            if (grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                CameraFragment.isWork = true;
-            } else {
-                CameraFragment.isWork = false;
-            }
-        } else if (requestCode == AudioRecordFragment.REQUEST_CODE_PERMISSION) {
-            AudioRecordFragment.isWork = grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED;
-        }
-    }
-
 }
